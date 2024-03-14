@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const car = [
     {id: 1, name: "GRANDEUR", price: 4500, desc: "Graceful Design", img: "GRANDEUR.jpg"},
@@ -9,28 +9,36 @@ const car = [
 ];
 
 
-const CarItem = ({ car }) => (
-   
-        <div>
-          <b> [{car.id}] </b>
-          <img className="car-image" src={`image/${car.img}`} alt={car.name} />
-          <span>
-            <b>{car.name} </b> {""} {car.price}
-            {"$,  "}
-            {car.desc} {""}
-          </span>
-        </div>
+const CarItem = ({ car }) => {
+    return (
+
+        <div className="CarItem">
+            <div>
+                <b> [{car.id}] {car.name}</b>
+            </div>
  
+            <img className="car-image" src={`image/${car.img}`} alt={car.name} />
+        
+            <div>
+                <span>
+                    {""} {car.price}
+                    {"$,  "}
+                    {car.desc} {""}
+                </span>
+            </div>
+
+        </div>
+      );   
     
-);
+};
 
 const Car = () => {     
     
     return (
-        <div>
+        <div className = "App">
             <h1> CAR LIST </h1>
             <p> 201939734 Kim Min Jeong </p>
-            <div>
+            <div className="car-list-container">
             {
                 car.map((car) => (
                     <CarItem car={car} />
