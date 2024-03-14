@@ -10,6 +10,10 @@ const car = [
 
 
 const CarItem = ({ car }) => {
+    const [counter, setCounter] = useState(0);
+    const onClick = () => {
+        setCounter(counter + 1);
+    };
     return (
 
         <div className="CarItem">
@@ -26,7 +30,9 @@ const CarItem = ({ car }) => {
                     {car.desc} {""}
                 </span>
             </div>
-
+            <div>
+                count: {counter} <button onClick={onClick}>Count</button>
+            </div>
         </div>
       );   
     
