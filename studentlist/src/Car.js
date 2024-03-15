@@ -31,7 +31,7 @@ const CarItem = ({ car }) => {
                 </span>
             </div>
             <div>
-                count: {counter} <button onClick={onClick}>Count</button>
+                total: {counter} <button onClick={onClick}>Vote</button>
             </div>
         </div>
       );   
