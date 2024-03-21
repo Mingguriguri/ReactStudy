@@ -28,9 +28,11 @@ export function AppLayout() {
 		
             <Routes> 
                 <Route path="/" element={<Home />} />
-                <Route path="/posts" element={<Posts />}>
-                <Route index element={<PostLists />} /> 
-                <Route path=":slug" element={<Post />} />
+                {/* 부모 */}
+                <Route path="/posts" element={<Posts />}> 
+                    {/* 자식 */}
+                    <Route index element={<PostLists />} />  
+                    <Route path=":slug" element={<Post />} />
                 </Route>
                 <Route path="/about" element={<About />} />
                 <Route path="*"	element={<NoMatch />} />
