@@ -8,13 +8,13 @@ export const FOOTER_INDEX = {
   Community: [
     {
       content: "Github",
-      path: "/",
+      path: "https://github.com/Mingguriguri",
     },
   ],
   More: [
     {
       content: "Blog",
-      path: "/",
+      path: "https://minsllogg.tistory.com/",
     },
   ],
 };
