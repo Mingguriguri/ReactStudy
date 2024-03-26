@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.sideWrapper {
+  width: 200px;
+  height: 100%;
+  border-right: 2px solid #cfcfcf;
+}

@@ -1,0 +1,39 @@
+.container {
+  min-height: 70dvh;
+  padding: 0 20px;
+}
+
+.contentContainer {
+  display: flex;
+  width: 100%;
+}
+
+.sidebar {
+  width: inherit;
+  height: 100vh;
+  color: black;
+  padding: 20px;
+  ul {
+    list-style: none;
+    padding: 0;
+    li {
+      margin: 10px 0;
+      &:hover {
+        cursor: pointer;
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+.linkWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 10px;
+}
+
+.link {
+  color: black;
+  text-decoration: none;
+}
