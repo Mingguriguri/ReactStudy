@@ -31,7 +31,7 @@ function Calculator() {
   const addHandler = () => { setAdd(num1 + num2); };
   const subHandler = () => { setSub(num1 - num2); };
   const mulHandler = () => { setMul(num1 * num2); };
-  const divHandler = () => { setDiv((num1 . num2).toFixed(2)); };
+  const divHandler = () => { setDiv((num1 / num2).toFixed(2)); };
 
 
   // View Part (applying React Bootstrap style)
@@ -50,22 +50,22 @@ function Calculator() {
         id = "input2" value={num2} onChange={handleNum2Change} />
       </InputGroup>
      </div>
-
+  
     <br></br>
     {/*  buttons */}
     <Container> 
        <Row>
         <Col> 
-        <Button onclick={addHandler}> Add </Button> <FormLabel> {add} </FormLabel>
+        <Button onClick={addHandler}> Add </Button> <FormLabel> {add} </FormLabel>
         </Col>
         <Col> 
-        <Button onclick={subHandler}> Sub </Button> <FormLabel> {sub} </FormLabel>
+        <Button onClick={subHandler}> Sub </Button> <FormLabel> {sub} </FormLabel>
         </Col>
         <Col> 
-        <Button onclick={mulHandler}> Mul </Button> <FormLabel> {mul} </FormLabel>
+        <Button onClick={mulHandler}> Mul </Button> <FormLabel> {mul} </FormLabel>
         </Col>
         <Col> 
-        <Button onclick={divHandler}> Div </Button> <FormLabel> {div} </FormLabel>
+        <Button onClick={divHandler}> Div </Button> <FormLabel> {div} </FormLabel>
         </Col>
         </Row>
     </Container>

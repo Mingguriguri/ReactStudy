@@ -11,19 +11,20 @@ function AnyQuestion() {
   const handleSubmit = (event) => {
     const form = event.currentTarget;
     if (form.checkValidity() === false){
-      event.preventDefault();
-      event.stopPropagation();
+      event.preventDefault(); // 이전 default 값으로 변경
+      event.stopPropagation(); // 전파되는 것을 멈춤
     }
     setValidated(true);
   }
   
+  // Validation
   return (
     <div style={{margin: 20}}> 
     Any Question?
     <Card style={{ padding: 30 }}> 
    
   <Form noValidate validated={validated} onSubmit={handleSubmit}>
-  {/* 26 page */}
+    {/* General Form */}
         <Form.Group as={Col} md="4" controlId="validationCustom01">
           <Form.Label>First name</Form.Label>
             <Form.Control
@@ -46,7 +47,8 @@ function AnyQuestion() {
         </Form.Group>
        
         <Row className="mb-3">
-        {/*  27 Page */}
+
+        {/*  hasValidation Form */}
         <Form.Group as={Col} md="4" controlId="validationCustomUsername">
           <Form.Label>Username</Form.Label>
           <InputGroup hasValidation>
@@ -88,7 +90,7 @@ function AnyQuestion() {
         </Form.Group>
       </Row>
 
-     {/* // 28 Page */}
+     {/* Check box*/}
      <Form.Group className="mb-3">
       <Form.Check
         required
