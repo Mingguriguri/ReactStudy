@@ -34,28 +34,38 @@ function Calculator() {
   const divHandler = () => { setDiv((num1 . num2).toFixed(2)); };
 
 
-
+  // View Part (applying React Bootstrap style)
   return (
     <div class ="container" align="center">
     <br></br>
      <h1><span class ="label label-primary">GCU Calculator </span></h1> 
      <br></br>
-     {/*  19 Page */}
+     {/*  input */}
+     <div class="container" align="center">
+      <InputGroup className="mb-3">
+        <Form.Control aria-label = "First number" placeholder='First Number' 
+        id = "input1" value={num1} onChange={handleNum1Change} />
+
+        <Form.Control aria-label = "Second number" placeholder='Second Number' 
+        id = "input2" value={num2} onChange={handleNum2Change} />
+      </InputGroup>
+     </div>
 
     <br></br>
+    {/*  buttons */}
     <Container> 
        <Row>
         <Col> 
-        {/*  20 Page add */}
+        <Button onclick={addHandler}> Add </Button> <FormLabel> {add} </FormLabel>
         </Col>
         <Col> 
-        {/*  20 Page sub */}
+        <Button onclick={subHandler}> Sub </Button> <FormLabel> {sub} </FormLabel>
         </Col>
         <Col> 
-        {/*  20 Page mul */}
+        <Button onclick={mulHandler}> Mul </Button> <FormLabel> {mul} </FormLabel>
         </Col>
         <Col> 
-        {/*  20 Page div */}
+        <Button onclick={divHandler}> Div </Button> <FormLabel> {div} </FormLabel>
         </Col>
         </Row>
     </Container>
