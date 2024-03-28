@@ -1,8 +1,21 @@
 import { useState } from 'react';
-// 23 Page
+import  Button  from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import InputGroup  from 'react-bootstrap/InputGroup';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import { Card } from 'react-bootstrap';
 
 function AnyQuestion() {
-  // 30 Page
+  const [validated, setValidated] = useState(false);
+  const handleSubmit = (event) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false){
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    setValidated(true);
+  }
   
   return (
     <div style={{margin: 20}}> 
