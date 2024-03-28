@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 import InputGroup  from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { Card } from 'react-bootstrap';
+import  Card from 'react-bootstrap/Card';
 
 function AnyQuestion() {
   const [validated, setValidated] = useState(false);
@@ -23,7 +23,17 @@ function AnyQuestion() {
     <Card style={{ padding: 30 }}> 
    
   <Form noValidate validated={validated} onSubmit={handleSubmit}>
-  // 26 Page
+  {/* 26 page */}
+        <Form.Group as={Col} md="4" controlId="validationCustom01">
+          <Form.Label>First name</Form.Label>
+            <Form.Control
+            require type="text"
+            placeholder="First name"
+            defaultValue="GCU"
+            />
+          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+        </Form.Group>
+
         <Form.Group as={Col} md="4" controlId="validationCustom02">
           <Form.Label>Last name</Form.Label>
           <Form.Control
@@ -34,12 +44,26 @@ function AnyQuestion() {
           />
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
+       
         <Row className="mb-3">
-        // 27 Page
+        {/*  27 Page */}
         <Form.Group as={Col} md="4" controlId="validationCustomUsername">
-        //    
+          <Form.Label>Username</Form.Label>
+          <InputGroup hasValidation>
+            <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
+            <Form.Control
+              type="text"
+              placeholder="Username"
+              aria-describedby="inputGroupPrepend"x
+              required
+              />
+              <Form.Control.Feedback type="invalid">
+                Please choose a username
+              </Form.Control.Feedback>
+            </InputGroup>
        </Form.Group>
       </Row>
+
       <Row className="mb-3">
         <Form.Group as={Col} md="6" controlId="validationCustom03">
           <Form.Label>City</Form.Label>
@@ -63,7 +87,19 @@ function AnyQuestion() {
           </Form.Control.Feedback>
         </Form.Group>
       </Row>
-     // 28 Page
+
+     {/* // 28 Page */}
+     <Form.Group className="mb-3">
+      <Form.Check
+        required
+        label="Agree to terms and conditions"
+        feedback="You must agree before submitting"
+        feedbackType="invalid"
+      />
+     </Form.Group>
+     
+     {/* Button */}
+     <Button type="submit">Submit Form</Button>
     </Form>
     <br></br>
     </Card>
