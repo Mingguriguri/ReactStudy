@@ -10,9 +10,30 @@ import Col from 'react-bootstrap/Col';
 import React, { useState } from "react";
 
 function Calculator() {
-  // 16 Page
+  // (16p) Define variables to store numbers and values using the useState hook
+  const [num1, setNum1] = useState(0);
+  const [num2, setNum2] = useState(0);
   
-  // 17 ~ 18 Page
+  const [add, setAdd] = useState(0);
+  const [sub, setSub] = useState(0);
+  const [mul, setMul] = useState(0);
+  const [div, setDiv] = useState(0);
+  
+  // (17-18p) Define event handlers
+  // about Nums
+  const handleNum1Change = () => {
+    setNum1(Number(document.getElementById("input1").value));
+  };
+  const handleNum2Change = () => {
+    setNum2(Number(document.getElementById("input2").value));
+  };
+  // about Operators
+  const addHandler = () => { setAdd(num1 + num2); };
+  const subHandler = () => { setSub(num1 - num2); };
+  const mulHandler = () => { setMul(num1 * num2); };
+  const divHandler = () => { setDiv((num1 . num2).toFixed(2)); };
+
+
 
   return (
     <div class ="container" align="center">
